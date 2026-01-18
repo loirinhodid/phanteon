@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenless Zone Zero - Pantheon Wise</title>
+    
+    <!-- Favicon com imagem de Pantheon Wise -->
+    <link rel="icon" type="image/png" href="./logo.png">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGXXWRR0LX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BGXXWRR0LX');
+    </script>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00ff88;
+            --primary-dark: #00cc6a;
+            --accent: #00ffff;
+            --accent-alt: #ff00ff;
+            --bg-dark: #0a0d1a;
+            --bg-card: #1a1f3a;
+            --text: #e0e0e0;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a3a 50%, #0a1a2a 100%);
+            color: var(--text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        /* Logo circular - replicado do cabeçalho original */
+        .logo {
+            width: 110px;
+            height: 110px;
+            background-color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            margin: 24px auto 8px auto;
+            border: 4px solid var(--accent);
+            position: relative;
+        }
+        .logo img {
+            border-radius: 50%;
+            border: 3px solid #fff;
+            width: 96px;
+            height: 96px;
+        }
+
+        .logo-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--bg-dark);
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 2px 6px;
+            font-size: 14px;
+            line-height: 1;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Cabeçalho - MAIS COMPACTO */
+        .cabecalho {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0 auto 24px auto;
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 10px 0;
+            background: var(--bg-dark);
+            color: #fff;
+            max-width: 500px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .cabecalho a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 10px; /* REDUZIDO de 18px para 10px */
+            font-weight: bold;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 8px;
+            border-radius: 5px;
+        }
+        .cabecalho a:hover {
+            color: #fff;
+            background: rgba(255, 179, 71, 0.15);
+        }
+
+        .cabecalho .material-symbols-outlined {
+            font-size: 24px;
+            color: var(--accent);
+            transition: color 0.2s;
+            line-height: 1;
+            font-family: 'Material Symbols Outlined' !important;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined' !important;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .spotify-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            object-fit: contain;
+            border: none;
+            margin-left: 4px;
+            vertical-align: middle;
+            border-radius: 4px;
+            background: var(--bg-dark);
+            border: 2px solid var(--accent);
+        }
+        
+        .page-title {
+            text-align: center;
+            color: var(--accent);
+            font-family: Arial, sans-serif;
+            margin: 24px 0;
+            letter-spacing: 1px;
+            font-size: 2.2rem;
+        }
+        
+        .page-subtitle {
+            text-align: center;
+            color: var(--text);
+            margin-bottom: 30px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.2rem;
+        }
+        
+        /* Container principal */
+        .container {
+            max-width: 1000px;
+            margin: 32px auto;
+            background: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+        }
+        
+
+        /* Seção do vídeo */
+        .video-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .video-title {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            display: block;
+        }
+        
+        /* Seção de informações */
+        .info-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .info-card {
+            flex: 1;
+            min-width: 300px;
+            background: #2d2d5a;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .info-card h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .info-card p {
+            margin-bottom: 15px;
+        }
+        
+        .info-card ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .info-card li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .pc-only {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255, 179, 71, 0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        /* Botões */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--bg-dark);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 179, 71, 0.1);
+        }
+        
+        .back-button {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            background: var(--bg-dark);
+            color: #aaa;
+            font-size: 0.9rem;
+            border-radius: 10px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* RESPONSIVIDADE AJUSTADA */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 1.6rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1rem;
+            }
+            
+            .logo {
+                width: 90px;
+                height: 90px;
+                margin: 16px auto 8px auto;
+            }
+            
+            .logo img {
+                width: 76px;
+                height: 76px;
+            }
+            
+            .cabecalho {
+                max-width: 100%;
+                padding: 8px 0;
+            }
+            
+            .cabecalho a {
+                margin: 0 8px; /* Ainda mais compacto em mobile */
+                padding: 4px 6px;
+            }
+            
+            .cabecalho .material-symbols-outlined {
+                font-size: 20px;
+            }
+            
+            .spotify-icon {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .container {
+                padding: 16px;
+                margin: 16px auto;
+            }
+            
+            .video-container iframe {
+                height: 300px;
+            }
+            
+            .info-section {
+                gap: 20px;
+            }
+            
+            .info-card {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .cabecalho a {
+                margin: 0 6px;
+                font-size: 0.9rem;
+            }
+            
+            .cabecalho .material-symbols-outlined {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .logo img {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .page-title {
+                font-size: 1.3rem;
+                margin: 16px 0;
+            }
+            
+            .cabecalho a {
+                margin: 0 4px; /* Mínimo em telas muito pequenas */
+                padding: 3px 5px;
+            }
+            
+            .cabecalho .material-symbols-outlined {
+                font-size: 16px;
+            }
+            
+            .spotify-icon {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .video-container iframe {
+                height: 250px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- CABEÇALHO REPLICADO DA PÁGINA ORIGINAL -->
+    <div class="logo">
+        <img src="https://preview.redd.it/zenless-zone-zero-icon-revealed-official-announcement-v0-fiyaihcffwx81.jpg?auto=webp&s=29cd0931179f9f15f88164e181a146b144fb635b" alt="Zenless Zone Zero Nova Eridu">
+        <span class="logo-badge" title="Vanguard">★</span>
+    </div>
+
+    <h2 class="page-title">HOYOPLAY LAUNCHER - SEU ACESSO A NOVA ERIDU</h2>
+    <p class="page-subtitle">A plataforma oficial para jogar Zenless Zone Zero com Pantheon Wise e sincronização total</p>
+
+    <div class="cabecalho">
+        <a href="index.html" title="Home">
+            <i class="fas fa-home"></i>
+        </a>
+
+        <a href="Galeria.html" title="Galeria">
+            <i class="fas fa-shield-alt"></i>
+        </a>
+
+        <a href="music.html" title="Music">
+            <i class="fas fa-music"></i>
+        </a>
+
+        <a href="curriculo.html" title="Currículo">
+            <i class="fas fa-briefcase"></i>
+        </a>
+
+        <a href="canal.html" title="Canal">
+            <i class="fas fa-play-circle"></i>
+        </a>
+
+        <a href="https://open.spotify.com" title="Spotify" target="_blank">
+            <img class="spotify-icon" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" />
+        </a>
+    </div>
+    
+    <div class="container">
+
+        
+        <div class="video-section">
+            <h3 class="video-title">HoYoPlay Launcher - Seu Portal para Nova Eridu</h3>
+            <div class="video-container">
+                <img src="./Launcher.webp" alt="Launcher HoYoPlay" style="width: 100%; height: auto; border-radius: 8px;">
+            </div>
+            
+            <div class="button-group">
+                <a href="https://hoyoplay.hoyoverse.com/" class="btn" target="_blank">
+                    <i class="fas fa-download"></i>
+                    Baixar HoYoPlay Agora
+                </a>
+                <a href="https://www.zenlesszonezerogame.com/" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-globe"></i>
+                    Site Oficial ZZZ
+                </a>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-card">
+                <h3>O que é o HoYoPlay Launcher?</h3>
+                <p><span class="highlight">HoYoPlay</span> é o <span class="highlight">launcher oficial</span> desenvolvido pela HoYoverse especificamente para oferecer a melhor experiência ao acessar Zenless Zone Zero. É muito mais que um simples gerenciador de downloads - é seu <span class="highlight">portal para sincronização total</span> com Nova Eridu.</p>
+                <p>O Launcher foi otimizado para garantir acesso imediato e sem complicações ao universo de Zenless Zone Zero, com atualizações automáticas, gerenciamento inteligente de dados e sincronização perfeita entre todos os seus dispositivos.</p>
+            </div>
+            
+            <div class="info-card">
+                <h3>Funcionalidades Principais</h3>
+                <ul>
+                    <li><span class="highlight">Gerenciamento Centralizado:</span> Controle todas as suas contas HoYoverse em um único lugar seguro</li>
+                    <li><span class="highlight">Sincronização Automática:</span> Seus progresso, configurações e personagens sincronizam instantaneamente entre PC, Mobile e Console</li>
+                    <li><span class="highlight">Atualizações Otimizadas:</span> Downloads inteligentes que economizam dados e tempo - atualize apenas o necessário</li>
+                    <li><span class="highlight">Launcher Integrado:</span> Acesse Zenless Zone Zero, Honkai Impact 3rd, Genshin Impact e outros títulos da HoYoverse</li>
+                    <li><span class="highlight">Notificações em Tempo Real:</span> Receba alertas sobre eventos, manutenção e atualizações importantes</li>
+                    <li><span class="highlight">Gerenciador de Armazenamento:</span> Limpe cache e gerencie seu espaço em disco com facilidade</li>
+                </ul>
+            </div>
+            
+            <div class="info-card">
+                <h3>Benefícios Exclusivos do HoYoPlay</h3>
+                <ul>
+                    <li><span class="highlight">Acesso Garantido:</span> O launcher oficial garante acesso 100% seguro a Zenless Zone Zero sem riscos</li>
+                    <li><span class="highlight">Atualizações Prioritárias:</span> Seja o primeiro a acessar novos conteúdos e eventos exclusivos</li>
+                    <li><span class="highlight">Suporte Oficial:</span> Receba suporte técnico direto da HoYoverse para qualquer problema</li>
+                    <li><span class="highlight">Integração de Contas:</span> Uma conta para todos os jogos HoYoverse - economize tempo e se mantenha sincronizado</li>
+                    <li><span class="highlight">Otimização de Performance:</span> O launcher detecta automaticamente as melhores configurações para seu dispositivo</li>
+                    <li><span class="highlight">Segurança Avançada:</span> Proteção contra vírus e malware integrada - jogue com tranquilidade</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Plataformas Suportadas</h3>
+                <div class="pc-only" style="margin: 15px 0;">
+                    <span class="material-symbols-outlined">devices</span>
+                    <span><span class="highlight">Windows PC</span> - Suporte completo com driver otimizado</span>
+                </div>
+                <div class="pc-only" style="margin: 15px 0;">
+                    <span class="material-symbols-outlined">phone_android</span>
+                    <span><span class="highlight">Android & iOS</span> - App móvel com sincronização instantânea</span>
+                </div>
+                <div class="pc-only" style="margin: 15px 0;">
+                    <span class="material-symbols-outlined">videogame_asset</span>
+                    <span><span class="highlight">PlayStation & Xbox</span> - Console exclusivo com conta única</span>
+                </div>
+                <p style="margin-top: 20px; font-style: italic;">Jogue em qualquer plataforma e sua conta permanecerá sincronizada automaticamente. Comece em um PC e continue no seu celular sem perder progresso!</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Como Instalar o HoYoPlay Launcher</h3>
+                <ol style="text-align: left; padding-left: 20px;">
+                    <li style="margin-bottom: 10px;"><span class="highlight">Visite hoyoplay.hoyoverse.com</span> - Acesse o site oficial</li>
+                    <li style="margin-bottom: 10px;"><span class="highlight">Clique em "Download"</span> - Escolha sua plataforma (Windows, Mac, Mobile)</li>
+                    <li style="margin-bottom: 10px;"><span class="highlight">Instale o Launcher</span> - Siga as instruções na tela (leva menos de 2 minutos)</li>
+                    <li style="margin-bottom: 10px;"><span class="highlight">Crie ou Conecte sua Conta HoYoverse</span> - Use email, telefone ou redes sociais</li>
+                    <li style="margin-bottom: 10px;"><span class="highlight">Selecione Zenless Zone Zero</span> - Clique no jogo e inicie o download</li>
+                    <li style="margin-bottom: 10px;"><span class="highlight">Aguarde a Sincronização</span> - O launcher detecta seu progresso automaticamente</li>
+                    <li><span class="highlight">Jogue!</span> - Você está pronto para explorar Nova Eridu com Pantheon Wise</li>
+                </ol>
+            </div>
+
+            <div class="info-card">
+                <h3>Por Que Usar o HoYoPlay?</h3>
+                <p>Enquanto outras plataformas podem oferecer acesso ao Zenless Zone Zero, <span class="highlight">apenas o HoYoPlay oferece integração completa</span> com os sistemas de sincronização da HoYoverse. Veja a comparação:</p>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                    <tr style="background: rgba(0, 255, 136, 0.1); border-bottom: 2px solid var(--accent);">
+                        <th style="padding: 12px; text-align: left; color: var(--accent);">Recurso</th>
+                        <th style="padding: 12px; text-align: center; color: var(--accent);">HoYoPlay</th>
+                        <th style="padding: 12px; text-align: center; color: var(--text);">Outras Plataformas</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(0, 255, 136, 0.2);">
+                        <td style="padding: 12px;"><span class="highlight">Sem Risco de Bans</span></td>
+                        <td style="padding: 12px; text-align: center; color: var(--primary);">Garantido</td>
+                        <td style="padding: 12px; text-align: center; color: #aaa;">Risco</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(0, 255, 136, 0.2);">
+                        <td style="padding: 12px;"><span class="highlight">Melhor Performance</span></td>
+                        <td style="padding: 12px; text-align: center; color: var(--primary);">Otimizado</td>
+                        <td style="padding: 12px; text-align: center; color: #aaa;">Padrão</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(0, 255, 136, 0.2);">
+                        <td style="padding: 12px;"><span class="highlight">Sincronização Multi-Dispositivo</span></td>
+                        <td style="padding: 12px; text-align: center; color: var(--primary);">Perfeita</td>
+                        <td style="padding: 12px; text-align: center; color: #aaa;">Limitada</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(0, 255, 136, 0.2);">
+                        <td style="padding: 12px;"><span class="highlight">Atualizações Imediatas</span></td>
+                        <td style="padding: 12px; text-align: center; color: var(--primary);">Imediato</td>
+                        <td style="padding: 12px; text-align: center; color: #aaa;">Atrasado</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(0, 255, 136, 0.2);">
+                        <td style="padding: 12px;"><span class="highlight">Suporte Técnico Oficial</span></td>
+                        <td style="padding: 12px; text-align: center; color: var(--primary);">24/7</td>
+                        <td style="padding: 12px; text-align: center; color: #aaa;">Nenhum</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-button" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="index.html" class="btn">
+            <span class="material-symbols-outlined">home</span>
+            Home
+        </a>
+        <a href="index.html" class="btn">
+            <span class="material-symbols-outlined">arrow_back</span>
+            Voltar ao Início
+        </a>
+    </div>
+
+    <footer>
+        <p>HoYoPlay Launcher &copy; 2025 - Plataforma Oficial da HoYoverse para Zenless Zone Zero. Esta é uma página de fãs não oficial.</p>
+    </footer>
+</body>
+</html>

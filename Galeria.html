@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenless Zone Zero - Termos e Condições</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGXXWRR0LX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BGXXWRR0LX');
+    </script>
+
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #00ff88;
+            --primary-dark: #00cc6a;
+            --accent: #00ffff;
+            --accent-alt: #ff00ff;
+            --bg-dark: #0a0d1a;
+            --bg-card: #1a1f3a;
+            --text: #e0e0e0;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a3a 50%, #0a1a2a 100%);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .banner-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin: 0 auto 20px;
+            border: 3px solid var(--accent);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 255, 0.1));
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 20, 40, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .banner-text {
+            text-align: center;
+            color: var(--text);
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+        }
+        
+        .banner-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            color: var(--accent);
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .section {
+            background: rgba(26, 31, 58, 0.6);
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+        }
+        
+        .section h2 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .section h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin: 25px 0 15px;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        
+        .section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .section li {
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid var(--accent);
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        
+        .decorative-border {
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+        
+        .learning-note {
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+            font-style: italic;
+            color: var(--accent);
+        }
+        
+        /* Logo estilizado (padrão) */
+        .logo-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 110px;
+            height: 110px;
+            background-color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 12px auto;
+            border: 4px solid var(--accent);
+            position: relative;
+            box-shadow: 0 4px 16px rgba(0, 255, 136, 0.3);
+        }
+
+        .logo img {
+            border-radius: 50%;
+            border: 3px solid #fff;
+            width: 96px;
+            height: 96px;
+            object-fit: cover;
+        }
+
+        .logo-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--bg-dark);
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 2px 6px;
+            font-size: 14px;
+            line-height: 1;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* CABEÇALHO CORRIGIDO - MAIS COMPACTO */
+        .cabecalho {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0 auto 24px auto;
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 12px 0;
+            background: var(--bg-dark);
+            color: var(--text);
+            box-shadow: 0 2px 8px rgba(0, 255, 136, 0.15);
+            max-width: 900px;
+        }
+
+        .cabecalho a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 8px;
+        }
+
+        .cabecalho a:hover {
+            color: var(--primary);
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 5px;
+        }
+
+        .cabecalho .material-symbols-outlined {
+            font-size: 24px;
+            color: #c8aa6e;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .cabecalho a:hover .material-symbols-outlined {
+            color: #f0e6d2;
+        }
+
+        .spotify-icon {
+            width: 24px; /* REDUZIDO de 28px para 24px */
+            height: 24px; /* REDUZIDO de 28px para 24px */
+            display: inline-block;
+            vertical-align: middle;
+            border: none;
+            object-fit: contain;
+            margin-left: 4px;
+        }
+
+        /* Ajustes para Material Symbols */
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined' !important;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* RESPONSIVIDADE AJUSTADA */
+        @media (max-width: 768px) {
+            .cabecalho {
+                max-width: 100%;
+                padding: 10px 0;
+            }
+            
+            .cabecalho a {
+                margin: 0 8px; /* REDUZIDO para mobile */
+                padding: 4px 6px;
+            }
+            
+            .cabecalho .material-symbols-outlined {
+                font-size: 1.3rem;
+            }
+            
+            .spotify-icon {
+                width: 22px;
+                height: 22px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .cabecalho a {
+                margin: 0 6px; /* MAIS COMPACTO em telas pequenas */
+                font-size: 0.9rem;
+            }
+            
+            .cabecalho .material-symbols-outlined {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cabecalho {
+                padding: 8px 0;
+            }
+            
+            .cabecalho a {
+                margin: 0 4px; /* MÍNIMO em telas muito pequenas */
+                padding: 3px 5px;
+            }
+            
+            .cabecalho .material-symbols-outlined {
+                font-size: 1.1rem;
+            }
+            
+            .spotify-icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- LOGO (padrão em todas as páginas) -->
+        <div class="logo-section">
+            <div class="logo">
+                <img src="https://preview.redd.it/zenless-zone-zero-icon-revealed-official-announcement-v0-fiyaihcffwx81.jpg?auto=webp&s=29cd0931179f9f15f88164e181a146b144fb635b" alt="Logo principal">
+                <span class="logo-badge" title="Pantheon Wise">★</span>
+            </div>
+        </div>
+        
+        <!-- CABEÇALHO (MAIS COMPACTO) -->
+        <div class="cabecalho">
+            <a href="index.html" title="Home" style="background: transparent; border-radius: 5px; padding: 8px 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(0,255,136,0.1)'" onmouseout="this.style.background='transparent'">
+                <span class="material-symbols-outlined">home</span>
+            </a>
+
+            <a href="Galeria.html" title="Galeria" style="background: transparent; border-radius: 5px; padding: 8px 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(0,255,255,0.1)'" onmouseout="this.style.background='transparent'">
+                <span class="material-symbols-outlined">shield</span>
+            </a>
+
+            <a href="music.html" title="Music" style="background: transparent; border-radius: 5px; padding: 8px 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(0,255,136,0.1)'" onmouseout="this.style.background='transparent'">
+                <span class="material-symbols-outlined">music_note</span>
+            </a>
+
+            <a href="curriculo.html" title="Currículo" style="background: transparent; border-radius: 5px; padding: 8px 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(0,255,136,0.1)'" onmouseout="this.style.background='transparent'">
+                <span class="material-symbols-outlined">person</span>
+            </a>
+
+            <a href="canal.html" title="Canal" style="background: transparent; border-radius: 5px; padding: 8px 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(0,255,136,0.1)'" onmouseout="this.style.background='transparent'">
+                <span class="material-symbols-outlined">play_circle</span>
+            </a>
+
+            <a href="https://open.spotify.com" title="Spotify" target="_blank" style="background: transparent; border-radius: 5px; padding: 8px 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(0,255,136,0.1)'" onmouseout="this.style.background='transparent'">
+                <img class="spotify-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png" alt="Spotify" />
+            </a>
+        </div>
+        
+        <!-- BANNER COM TÍTULO -->
+        <div class="banner-container" style="height: 140px; margin-bottom: 30px; margin-top: -10px; position: relative; display: flex; align-items: center; justify-content: center;">
+            <img src="https://gam3s.gg/_next/image/?url=https%3A%2F%2Fassets.gam3s.gg%2Fzenless_zone_zero_banner_935aa7dee6.png&w=3840&q=75" alt="Zenless Zone Zero" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 8px; position: absolute;">
+            <h1 style="text-align: center; position: relative; z-index: 10; text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 10px rgba(0,255,136,0.5); margin: 0;">Termos e Condições</h1>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Sobre Este Site</h2>
+                <p>Este é um <span class="highlight">website de fã</span> criado por fãs de <span class="highlight">Zenless Zone Zero</span> para celebrar <span class="highlight">Pantheon Wise</span> e <span class="highlight">Belle</span>.</p>
+                <p>Não é afiliado, endossado ou patrocinado pela <span class="highlight">HoYoverse</span> ou qualquer entidade oficial. Este projeto é <span class="highlight">não comercial</span> e desenvolvido como hobby.</p>
+            </div>
+
+            <div class="section">
+                <h2>Isenção de Responsabilidade</h2>
+                <p>Este site é fornecido <span class="highlight">"do jeito que está"</span> sem nenhuma garantia.</p>
+                <p><span class="highlight">Não nos responsabilizamos</span> por qualquer coisa relacionada ao uso deste site, incluindo:</p>
+                <ul>
+                    <li>Precisão das informações</li>
+                    <li>Erros ou interrupções</li>
+                    <li>Danos de qualquer tipo</li>
+                    <li>Sites externos vinculados</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Propriedade Intelectual</h2>
+                <p><span class="highlight">Zenless Zone Zero</span>, personagens, arte e música são propriedade da <span class="highlight">HoYoverse</span>.</p>
+                <p>Utilizamos conteúdo do jogo apenas para <span class="highlight">personalização e celebração</span> da comunidade.</p>
+            </div>
+
+            <div class="section">
+                <h2>Código e Personalização</h2>
+                <p>Este código é fornecido <span class="highlight">como está</span> e não aceitamos interferências ou modificações externas sem consentimento.</p>
+                <p>Utilizamos <span class="highlight">ferramentas de personalização</span> para customizar a aparência do site.</p>
+            </div>
+
+            <div class="section">
+                <h2>Coleta de Dados</h2>
+                <p><span class="highlight">Não coletamos dados pessoais</span>. Coletamos apenas <span class="highlight">dados de tráfego anônimos</span> para análise básica.</p>
+                <p>Não há processamento de dados pessoais, portanto nenhuma lei de proteção de dados se aplica a este site.</p>
+            </div>
+
+            <div class="section">
+                <h2>Conformidade Legal</h2>
+                <p>Este é um projeto de fã não comercial. <span class="highlight">Não estamos sujeitos a nenhuma jurisdição específica</span> além da legislação base do local onde hospedado.</p>
+                <p>Qualquer conteúdo utilizado é apenas para fins educacionais e de fã-comunidade.</p>
+            </div>
+        </div>
+        
+        <div class="decorative-border"></div>
+
+        <div style="text-align: center; margin-top: 40px; margin-bottom: 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="index.html" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--bg-dark); border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: 600; transition: all 0.2s; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.boxShadow='0 5px 10px rgba(0,255,136,0.3)'" onmouseout="this.style.boxShadow='none'">
+                <span class="material-symbols-outlined" style="font-size: 1.3em;">home</span>
+                Home
+            </a>
+            <a href="javascript:history.back()" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--bg-dark); border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: 600; transition: all 0.2s; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.boxShadow='0 5px 10px rgba(0,255,136,0.3)'" onmouseout="this.style.boxShadow='none'">
+                <span class="material-symbols-outlined" style="font-size: 1.3em;">arrow_back</span>
+                Voltar
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Zenless Zone Zero - Projeto Fã. Todos os direitos reservados.</p>
+            <p>Este site é um projeto pessoal de fã não afiliado à HoYoverse ou Zenless Zone Zero.</p>
+        </div>
+    </div>
+</body>
+</html>
+
